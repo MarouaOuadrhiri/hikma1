@@ -1,0 +1,309 @@
+/* Pricing Section */
+.pricing-wrapper-2 {
+
+  .pricing-content {
+    position: relative;
+    z-index: 9;
+
+    .pricing-text {
+      margin-top: 25px;
+      max-width: 548px;
+    }
+
+    .nav {
+      background-color: $white;
+      border-radius: 24.5px;
+      padding: 10px 20px;
+      margin-top: 40px;
+      border: none;
+
+      @include breakpoint (max-xxl) {
+       margin-top: 15px;
+     }
+
+      .nav-tabs {
+        border-bottom: 0;
+        display: flex;
+      }
+
+      .nav-link {
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        border: 0;
+        border-radius: 0;
+        padding: 0 40px;
+        position: relative;
+        background: transparent;
+        z-index: 2;
+        color: $text-color;
+        margin-bottom: 0;
+
+        &::before {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%) translateX(50%);
+          background: $theme-color;
+          width: 43px;
+          height: 22px;
+          border-radius: 20px;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: -18px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 17px;
+          height: 17px;
+          border-radius: 50%;
+          background: $white;
+          z-index: 1;
+        }
+
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          padding-right: 0;
+
+          &::after,
+          &::before {
+            display: none;
+          }
+        }
+
+        &.active {
+          color: $theme-color-2;
+
+          &::after {
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .pricing-right-items {
+    display: flex;
+    align-items: center;
+
+    .pricing-box-items {
+      max-width: 417px;
+      width: 100%;
+      border-radius: 20px;
+      background: $header-color;
+      padding: 40px;
+
+       @include breakpoint (max-xxl) {
+         padding: 30px;
+      }
+
+      @include breakpoint (max-sm) {
+        padding: 25px;
+      }
+
+      .pricing-header {
+        position: relative;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding-bottom: 35px;
+        position: relative;
+        z-index: 9;
+        margin-bottom: 32px;
+
+        .sub-texts {
+            top: 40px;
+            right: 0;
+            position: absolute;
+            font-size: 24px;
+            font-weight: 700;
+            color: $white;
+
+             @include breakpoint (max-sm) {
+                font-size: 20px;
+            }
+        }
+
+        h2 {
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 1;
+            color: $white;
+            
+            @include breakpoint (max-sm) {
+                font-size: 50px;
+            }
+
+            sup {
+                font-size: 32px;
+                font-weight: 700;
+                top: -1.5em;
+                margin-right: -10px;
+
+                @include breakpoint (max-sm) {
+                    top: -0.5em;
+                }
+            }
+
+            sub {
+                font-size: 20px;
+                font-weight: 600;
+                text-transform: capitalize;
+                margin-left: -10px;
+            }
+        }
+     }
+
+      .theme-btn {
+        background: $theme-color;
+        color: $white;
+        border: none;
+        @include flex;
+        justify-content: space-between;
+
+        i {
+            background-color: $white;
+            color: $header-color;
+        }
+
+        &:hover {
+            background-color: $white;
+            color: $header-color;
+
+            i {
+                background-color: $theme-color;
+                color: $white;
+            }
+        }
+      }
+
+      ul  {
+        margin-top: 24px;
+
+        li {
+            color: $white;
+
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+
+            @include breakpoint (max-sm) {
+                font-size: 14px;
+            }
+
+            i {
+               color: $theme-color-2;
+               margin-right: 8px;
+
+               @include breakpoint (max-sm) {
+                    margin-right: 5px;
+                }
+            }
+        }
+      }
+
+      &.style-2 {
+        margin-left: -32%;
+        z-index: -1;
+        border-radius: 20px;
+        background: $white;
+
+        @media (max-width: 767px) {
+          margin-left: -70%;
+        }
+
+        .pricing-header {
+
+            .sub-texts {
+                color: $header-color;
+            }
+        }
+        
+        .theme-btn {
+           width: 100%;
+           background-color: transparent;
+           border: 1px solid rgba(203, 204, 207, 0.24);
+           color: $header-color;
+
+           i {
+             background-color: $theme-color;
+             color: $white;
+           }
+        }
+
+        ul {
+          li {
+             color: $text-color;
+          }
+        }
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+
+.pricing-card-items-3 {
+   border-radius: 16px;
+   background-color: $white;
+   backdrop-filter: blur(24px);
+   padding: 40px 48px;
+   margin-top: 30px;
+    @include transition;
+
+    @include breakpoint (max-xl) {
+        padding: 30px;
+    }
+
+   .pricing-header {
+      border-bottom: 1px solid rgba(203, 204, 207, 0.24);
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+
+      h6 {
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        color: $theme-color-2;
+      }
+   }
+
+   .pricing-list-box {
+      padding: 24px;
+      background-color: $bg-color;
+      margin-bottom: 30px;
+      border-radius: 16px;
+
+      li {
+        color: $header-color;
+
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+
+          i {
+            color: $theme-color-2;
+            margin-right: 12px;
+          }
+      }
+   }
+
+   .theme-btn {
+      width: 100%;
+      @include flex;
+      justify-content: space-between;
+   }
+
+   &:hover {
+      transform: translateY(-10px);
+   }
+}

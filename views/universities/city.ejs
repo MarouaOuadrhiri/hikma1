@@ -1,0 +1,159 @@
+<%- include('../partials/head', { title: 'الجامعات في ' + city + ' - Hikma' }) %>
+
+<body class="smooth-scroll-yes">
+
+    <!-- Preloader Start -->
+    <div id="preloader" class="preloader">
+        <div class="animation-preloader">
+            <div class="spinner"></div>
+            <div class="txt-loading">
+                <span data-text-preloader="H" class="letters-loading">H</span>
+                <span data-text-preloader="I" class="letters-loading">I</span>
+                <span data-text-preloader="K" class="letters-loading">K</span>
+                <span data-text-preloader="M" class="letters-loading">M</span>
+                <span data-text-preloader="A" class="letters-loading">A</span>
+            </div>
+            <p class="text-center">Loading</p>
+        </div>
+        <div class="loader">
+            <div class="row">
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GT Back To Top Start -->
+    <button id="back-top" class="back-to-top show">
+        <i class="fa-regular fa-arrow-up"></i>
+    </button>
+
+    <!-- GT MouseCursor Start -->
+    <div class="mouseCursor cursor-outer"></div>
+    <div class="mouseCursor cursor-inner"></div>
+
+    <%- include('../partials/header') %>
+
+    <!-- Breadcrumb-Wrapper Section Start -->
+    <section class="breadcrumb-wrapper fix bg-cover" style="background-image: url('/assets/img/inner-page/breadcrumb.jpg');">
+        <div class="shape">
+            <img src="/assets/img/inner-page/shape.png" alt="img">
+        </div>
+        <div class="container">
+            <div class="page-heading">
+                <h1 class="breadcrumb-title">الجامعات في <%= city %></h1>
+                <ul class="breadcrumb-list">
+                    <li>
+                        <a href="/">الرئيسية</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </li>
+                    <li>
+                        <a href="/universities">جامعاتنا</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </li>
+                    <li style="color: #cc181e;">
+                        <%= city %>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!--News Section Start -->
+    <section class="news-standard-section section-padding fix" dir="rtl">
+        <div class="container">
+            <div class="news-standard-wrapper">
+                <div class="row g-4">
+                    <div class="col-lg-8 col-12 text-right">
+                        
+                        <% if (universities.length === 0) { %>
+                            <div class="alert alert-info">عذراً، لا تتوفر جامعات مسجلة في هذه المدينة حالياً.</div>
+                        <% } else { %>
+                            <% universities.forEach(uni => { %>
+                                <div class="news-standard-post" style="box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-radius: 15px; overflow: hidden; border: 1px solid #eee; background: #fff; margin-bottom: 40px;">
+                                    <div class="news-image">
+                                        <img src="<%= uni.image %>" alt="<%= uni.title %>">
+                                    </div>
+                                    <div class="news-content" style="padding: 30px;">
+                                        <ul class="news-list" style="justify-content: flex-start; gap: 20px; padding: 0; margin-bottom: 15px;">
+                                            <li style="margin-left: 20px;">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                <%= uni.city %>، <%= uni.country === 'spain' ? 'إسبانيا' : 'تركيا' %>
+                                            </li>
+                                            <li style="margin-left: 20px;">
+                                                <i class="fa-solid fa-calendar-days"></i>
+                                                تأسست عام: <%= uni.established %>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-graduation-cap"></i>
+                                                جامعة <%= uni.type %>
+                                            </li>
+                                        </ul>
+                                        <h3 class="text-right" style="font-size: 24px; font-weight: 700; color: #174093; margin-bottom: 15px;">
+                                            <a href="/universities/details/<%= uni.id %>">
+                                                <%= uni.title %>
+                                            </a>
+                                        </h3>
+                                        <p style="color: #666; line-height: 1.8;"><%= uni.desc1 %></p>
+                                        
+                                        <!-- Specialties in this city university -->
+                                        <div class="uni-specialties mt-4" style="background: #fdfdfd; padding: 20px; border-radius: 10px; border: 1px dashed #ddd;">
+                                            <h6 style="color: #cc181e; font-weight: 700; margin-bottom: 12px; font-size: 16px;">أهم التخصصات المتاحة بالجامعة:</h6>
+                                            <div class="d-flex flex-wrap" style="gap: 10px;">
+                                                <% uni.specialties.forEach(spec => { %>
+                                                    <span class="badge" style="background-color: #f0f4fd; color: #174093; padding: 8px 12px; border-radius: 6px; font-size: 14px; font-weight: 600;"><%= spec %></span>
+                                                <% }) %>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="text-left mt-4" style="display: flex; justify-content: flex-end;">
+                                            <a href="/universities/details/<%= uni.id %>" class="theme-btn" style="display: inline-flex; align-items: center; flex-direction: row-reverse; padding: 8px 16px 8px 24px;">
+                                                التفاصيل والأسعار
+                                                <i class="fa-solid fa-arrow-right" style="margin-left: 20px; margin-right: 0;"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% }) %>
+                        <% } %>
+
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="col-lg-4 col-12">
+                        <div class="main-sideber mr-lg-4 ml-lg-0">
+                            <!-- Cities Categories Widget -->
+                            <div class="news-sideber-box">
+                                <div class="wid-title text-right">
+                                    <h3>المدن الجامعية</h3>
+                                </div>
+                                <div class="news-widget-categories text-right">
+                                    <ul style="padding: 0;">
+                                        <li><a href="/universities/turkey"><i class="fa-solid fa-chevrons-left" style="margin-left: 8px; margin-right: 0;"></i> إسطنبول (تركيا)</a><span>(03)</span></li>
+                                        <li><a href="/universities/spain/madrid"><i class="fa-solid fa-chevrons-left" style="margin-left: 8px; margin-right: 0;"></i> مدريد</a><span>(03)</span></li>
+                                        <li><a href="/universities/spain/barcelona"><i class="fa-solid fa-chevrons-left" style="margin-left: 8px; margin-right: 0;"></i> برشلونة</a><span>(03)</span></li>
+                                        <li><a href="/universities/spain/valencia-malaga"><i class="fa-solid fa-chevrons-left" style="margin-left: 8px; margin-right: 0;"></i> فالنسيا ومالقا</a><span>(03)</span></li>
+                                        <li><a href="/universities/romania"><i class="fa-solid fa-chevrons-left" style="margin-left: 8px; margin-right: 0;"></i> رومانيا</a><span>(نشط)</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('../partials/footer') %>
+    <%- include('../partials/scripts') %>
+</body>
+</html>
+
+
+

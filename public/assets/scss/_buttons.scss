@@ -1,0 +1,58 @@
+.theme-btn {
+    background: transparent;
+    color: $header-color;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 6px 6px 6px 24px;
+    border-radius: 55px;
+    line-height: 1;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+    font-family: "Space Grotesk", sans-serif;
+    border: 1px solid $border-color;
+
+    @include breakpoint (max-sm) {
+        padding: 2px 4px 2px 24px;
+    }
+
+    i {
+        width: 48px;
+        height: 48px;
+        line-height: 48px;
+        text-align: center;
+        background-color: $theme-color;
+        color: $white;
+        margin-left: 20px;
+        @include transition;
+        border-radius: 50%;
+    }
+
+    &:hover {
+        background-color: $theme-color;
+        color: $white;
+
+        i {
+            background-color: $white;
+            color: $header-color;
+        }
+    }
+}
+
+.link-btn {
+    color: $theme-color-2;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-family: "Space Grotesk", sans-serif;
+
+    i {
+        margin-left: 8px;
+    }
+
+    &:hover {
+        color: $theme-color;
+    }
+}

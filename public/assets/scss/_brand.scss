@@ -1,0 +1,70 @@
+.brand-wrapper {
+
+    .brand-item {
+        border-top: 1px solid rgba(203, 204, 207, 0.72);
+        border-bottom: 1px solid rgba(203, 204, 207, 0.72);
+        text-align: center;
+        height: 116px;
+        position: relative;
+        
+         &::before {
+            @include before;
+            background-color: rgba(203, 204, 207, 0.72);
+            width: 1px;
+            left: 0;
+        }
+
+         &::after {
+            position: absolute;
+            content: "";
+            top: 0;
+            bottom: 0;
+            background-color: rgba(203, 204, 207, 0.72);
+            width: 1px;
+            right: 0;
+        }
+
+        .brand-image {
+            position: relative;
+            padding: 30px 0;
+
+            &::before {
+                @include before;
+                background-color: rgba(203, 204, 207, 0.72);
+                width: 1px;
+                left: 0;
+                height: 100px;
+
+                @include breakpoint (max-xl) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &.style-1 {
+
+        .brand-item {
+            height: 102px;
+
+            .brand-image {
+                text-align: center;
+                filter: grayscale(100%);
+                @include transition;
+                opacity: .4;
+
+                &:hover {
+                    filter: initial;
+                    opacity: 1;
+                }
+            }
+
+            .swiper-slide.swiper-slide-active{
+                .brand-image {
+                    filter: initial;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

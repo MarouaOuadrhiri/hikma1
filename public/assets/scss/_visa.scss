@@ -1,0 +1,565 @@
+.visa-certification-wrapper {
+
+    .visa-image {
+        margin-left: -310px;
+
+         @include breakpoint (max-xxl) {
+           margin-left: 0;
+        }
+
+        img {
+            @include imgw;
+        }
+    }
+
+    .visa-certification-content {
+        margin-left: 17px;
+
+         @include breakpoint (max-xxl) {
+            margin-left: 0;
+            margin-bottom: 100px;
+            margin-top: 100px;
+        }
+
+         @include breakpoint (max-lg) {
+           margin-bottom: 80px;
+           margin-top: 0;
+        }
+
+        .visa-item {
+            @include flex;
+            gap: 48px;
+            margin-top: 90px;
+
+            @include breakpoint (max-xxl) {
+                margin-top: 30px;
+                gap: 30px;
+            }
+
+            @include breakpoint (max-lg) {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+
+             .nav {
+                display: grid;
+                gap: 30px;
+
+                li {
+                    font-size: 20px;
+                    font-weight: 700;
+                    font-family: $heading-font;
+
+                    @include breakpoint (max-xxl) {
+                       font-size: 12px;
+                    }
+                
+                    @include breakpoint (max-lg) {
+                       font-size: 16px;
+                    }
+                
+                .nav-link {
+                    color: $header-color;
+                    @include transition;
+                    padding: 16px 40px 16px 16px;
+                    border-radius: 8px;
+                    backdrop-filter: blur(28px);
+                    background-color: $white;
+                    line-height: 1;
+
+                     @include breakpoint (max-xxl) {
+                         padding: 10px 10px 10px 10px;
+                    }
+
+                    @include breakpoint (max-lg) {
+                         padding: 16px 40px 16px 16px;
+                    }
+
+                    i {
+                        width: 24px;
+                        height: 24px;
+                        line-height: 24px;
+                        text-align: center;
+                        background-color: $theme-color;
+                        color: $white;
+                        border-radius: 50px;
+                        font-size: 14px;
+                        transform: rotate(-45deg);
+                        margin-right: 6px;
+                    }
+                   
+                    &.active {
+                        position: relative;
+                        background-color: $theme-color;
+                        color: $white;
+                        border-radius: 100px;
+
+                        i {
+                            background-color: $white;
+                            color: $theme-color;
+                        }
+                      }
+                   }
+                }
+            }
+
+            .content {
+
+                .icon {
+                    margin-bottom: 16px;
+                }
+
+                p {
+                    max-width: 479px;
+                    margin-bottom: 40px;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+
+.visa-provide-box {
+    background-color: $white;
+    padding: 30px;
+    border-radius: 16px;
+    background-color: $white;
+    margin-top: 30px;
+
+    .visa-top-item {
+        margin-bottom: 30px;
+         @include flex;
+        justify-content: space-between;
+
+        @include breakpoint (max-xxl) {
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .visa-left  {
+            @include flex;
+            gap: 16px;
+
+            p {
+                color: $theme-color;
+            }
+
+             h3 {
+                a {
+                    background-position: 0 95%;
+                    background-repeat: no-repeat;
+                    background-size: 0% 2px;
+                    display: inline;
+
+                    &:hover {
+                        color: $theme-color;
+                        background-size: 100% 2px;
+                        background-image: linear-gradient(180deg, $theme-color 0%, $theme-color 100%);
+                    }
+                }
+            }
+        }
+
+        .theme-btn {
+            background-color: $bg-color;
+
+            &:hover {
+                background-color: $theme-color;
+                color: $white;
+            }
+        }
+    }
+
+    .visa-list-item {
+        @include flex;
+        justify-content: space-between;
+
+        
+        @include breakpoint (max-xxl) {
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .list {
+            li {
+                font-size: 18px;
+                font-weight: 500;
+                font-family: $heading-font;
+
+                @include breakpoint (max-xxxl) {
+                    font-size: 16px;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+
+                i {
+                    width: 22px;
+                    height: 22px;
+                    line-height: 22px;
+                    text-align: center;
+                    border-radius: 50px;
+                    background-color: $text-color;
+                    color: $white;
+                    margin-right: 8px;
+                    font-size: 12px;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+
+.visa-provide-section {
+
+    .visa-slider {
+        margin-left: -400px;
+        margin-right: -400px;
+
+        @include breakpoint (max-xxl) {
+            margin-right: 0;
+            margin-left: 0;
+            margin: 0 10px;
+        }
+    }
+}
+
+
+.visa-bottom {
+    position: relative;
+    margin-top: 70px;
+
+    @include breakpoint (max-xxl) {
+        display: none;
+    }
+
+    &::before {
+        background-color: $theme-color-2;
+        @include before;
+        width: 410px;
+        height: 132px;
+        padding: 16px 16px 16px 294px;
+        border-radius: 0 100px 100px 0;
+
+        @include breakpoint (max-xxxl) {
+            display: none;
+        }
+    }
+
+     &::after {
+        background-color: $theme-color-2;
+        position: absolute;
+        content: "";
+        width: 410px;
+        height: 132px;
+        padding: 16px 16px 16px 294px;
+        border-radius: 100px 0 0 100px;
+        right: 0;
+        top: 0;
+
+        @include breakpoint (max-xxxl) {
+            display: none;
+        }
+    }
+
+    .visa-arrow-item {
+        @include flex;
+        justify-content: space-between;
+
+        .array-prev {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border-radius: 100%;
+            text-align: center;
+            background-color: $white;
+            color: $header-color;
+            position: relative;
+            z-index: 9;
+            margin-top: 16px;
+            margin-left: -15px;
+            font-size: 40px;
+        }
+
+        .array-next {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border-radius: 100%;
+            text-align: center;
+            background-color: $theme-color;
+            color: $white;
+            position: relative;
+            z-index: 9;
+            margin-top: 16px;
+            margin-right: -15px;
+            font-size: 40px;
+        }
+
+        .flag-item {
+            @include flex;
+            gap: 24px;
+
+            .flag-thumb {
+                position: relative;
+                transition: all 0.4s ease-in-out;
+                width: 120px;
+                height: 120px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+
+                &::before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    content: "";
+                    background-color: rgba(5, 17, 26, 0.8);
+                    border-radius: 50%;
+                    transition: all 0.4s ease-in-out;
+                    opacity: 0;
+                    visibility: hidden;
+                 }
+
+                 &::after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    content: "";
+                    border: 5px solid $white;
+                    border-radius: 50%;
+                    transition: all 0.4s ease-in-out;
+                    opacity: 0;
+                    visibility: hidden;
+               }
+
+                .country-name {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                    z-index: 2;
+                    transition: all 0.4s ease-in-out;
+                    opacity: 0;
+                    visibility: hidden;
+
+                    h4 {
+                        font-size: 14px;
+                        font-weight: 800;
+                        text-transform: capitalize;
+                        text-align: center;
+                        color: $white;
+                     }
+                 }
+
+                 &:hover {
+                    &::before {
+                      opacity: 1;
+                      visibility: visible;
+                    }
+
+                    &::after {
+                      opacity: 1;
+                      visibility: visible;
+                    }
+
+                    .country-name {
+                      opacity: 1;
+                      visibility: visible;
+                    }
+                 }
+            }
+        }
+    }
+}
+
+
+.country-details-wrapper {
+
+    .country-details-post {
+
+        .details-image {
+
+            img {
+                @include imgw;
+                border-radius: 24px;
+            }
+        }
+
+        .country-details-content {
+            margin-top: 20px;
+
+            h2 {
+                margin-bottom: 10px;
+            }
+
+            h5 {
+                color: $theme-color-2;
+                margin-top: 30px;
+            }
+
+            .tourist-visa-box {
+                border-radius: 16px;
+                padding: 30px;
+                background-color: $bg-color;
+                margin-top: 30px;
+                margin-bottom: 24px;
+
+                .tourist-box {
+                    @include flex;
+                    gap: 50px;
+
+                    .tourist-content {
+                        h5 {
+                            color: $header-color;
+                            margin-bottom: 5px;
+                            margin-top: 0;
+                        }
+                    }
+
+                    &.style-2 {
+                        padding-bottom: 15px;
+                        border-bottom: 1px solid rgba(203, 204, 207, 0.7);
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+
+            .text {
+                font-size: 32px;
+            }
+
+            .list-item {
+                margin-top: 20px;
+                margin-bottom: 30px;
+
+                li {
+                    color: $header-color;
+                    font-size: 18px;
+                    font-weight: 500;
+                    font-family: $heading-font;
+
+                    &:not(:last-child) {
+                        margin-bottom: 15px;
+                    }
+
+                    span {
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: $text-color;
+                        font-family: $body-font;
+                    }
+                }
+            }
+
+            .thumb {
+                img {
+                    @include imgw;
+                    border-radius: 16px;
+                }
+            }
+
+            .visa-list-2 {
+                @include flex;
+                gap: 32px;
+                margin-bottom: 20px;
+
+                li {
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: $header-color;
+
+                    i {
+                        color: $theme-color-2;
+                        margin-right: 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    .country-details-sideber {
+
+        .icon-box-item {
+            background-color: $bg-color;
+            border-radius: 8px;
+            padding: 12px 24px;
+             @include flex;
+             justify-content: space-between;
+             margin-bottom: 8px;
+
+             .left-item {
+                 @include flex;
+                 gap: 16px;
+            }
+
+            i  {
+                color: $header-color;
+            }
+        }
+
+        .visa-contact-box {
+            border-radius: 24px;
+            padding: 40px;
+            margin-top: 30px;
+
+            .content {
+                h3 {
+                    color: $white;
+                }
+
+                p {
+                    color: rgba(255, 255, 255, 0.7);
+                    border-bottom: 1px solid rgba(203, 204, 207, 0.24);
+                    padding-bottom: 16px;
+                    margin-bottom: 24px;
+                }
+
+                .icon-item {
+                    @include flex;
+                    gap: 16px;
+                    margin-bottom: 24px;
+
+                    .icon {
+                        width: 48px;
+                        height: 48px;
+                        line-height: 48px;
+                        text-align: center;
+                        border-radius: 100px;
+                        background-color: #183074;
+                        color: $white;
+                    }
+
+                    .cont {
+                        span {
+                            color: rgba(255, 255, 255, 0.7);
+                        }
+
+                        h6 {
+                            color: $white;
+                            font-size: 18px;
+                            font-weight: 500;
+
+                            a {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

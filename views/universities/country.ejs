@@ -1,0 +1,84 @@
+<%- include('../partials/head', { title: 'الدراسة في ' + (country === 'spain' ? 'إسبانيا' : (country === 'romania' ? 'رومانيا' : 'تركيا')) + ' - Hikma' }) %>
+
+<body class="smooth-scroll-yes">
+
+    <!-- Preloader Start -->
+    <div id="preloader" class="preloader">
+        <div class="animation-preloader">
+            <div class="spinner"></div>
+            <div class="txt-loading">
+                <span data-text-preloader="H" class="letters-loading">H</span>
+                <span data-text-preloader="I" class="letters-loading">I</span>
+                <span data-text-preloader="K" class="letters-loading">K</span>
+                <span data-text-preloader="M" class="letters-loading">M</span>
+                <span data-text-preloader="A" class="letters-loading">A</span>
+            </div>
+            <p class="text-center">Loading</p>
+        </div>
+        <div class="loader">
+            <div class="row">
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GT Back To Top Start -->
+    <button id="back-top" class="back-to-top show">
+        <i class="fa-regular fa-arrow-up"></i>
+    </button>
+
+    <!-- GT MouseCursor Start -->
+    <div class="mouseCursor cursor-outer"></div>
+    <div class="mouseCursor cursor-inner"></div>
+
+    <%- include('../partials/header') %>
+
+    <!-- Breadcrumb-Wrapper Section Start -->
+    <section class="breadcrumb-wrapper fix bg-cover" style="background-image: url('/assets/img/inner-page/breadcrumb.jpg');">
+        <div class="shape">
+            <img src="/assets/img/inner-page/shape.png" alt="img">
+        </div>
+        <div class="container">
+            <div class="page-heading">
+                <h1 class="breadcrumb-title">
+                    الدراسة في <%= country === 'spain' ? 'إسبانيا' : (country === 'romania' ? 'رومانيا' : 'تركيا') %>
+                </h1>
+                <ul class="breadcrumb-list">
+                    <li>
+                        <a href="/">الرئيسية</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </li>
+                    <li>
+                        <a href="/universities">جامعاتنا</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </li>
+                    <li style="color: #cc181e;">
+                        <%= country === 'spain' ? 'إسبانيا' : (country === 'romania' ? 'رومانيا' : 'تركيا') %>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Render Country Guide Content -->
+    <% if (country === 'spain') { %>
+        <%- include('guides/spain_guide') %>
+    <% } else if (country === 'romania') { %>
+        <%- include('guides/romania_guide') %>
+    <% } else if (country === 'turkey') { %>
+        <%- include('guides/turkey_guide') %>
+    <% } %>
+
+    <%- include('../partials/footer') %>
+    <%- include('../partials/scripts') %>
+</body>
+</html>
+
+

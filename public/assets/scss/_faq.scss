@@ -1,0 +1,93 @@
+.faq-wrapper {
+
+    .faq-content {
+        .text {
+            max-width: 505px;
+            margin-top: 24px;
+            margin-bottom: 48px;
+        }
+    }
+
+    .faq-items {
+        position: relative;
+        z-index: 9;
+
+        .accordion {
+            .accordion-item {
+                border: none;
+
+            h5 {
+                button {
+                line-height: 1;
+                font-weight: 600;
+                padding: 29px 30px;
+                color: $header-color;
+
+                cursor: pointer;
+
+                    @include breakpoint(max-sm) {
+                        font-size: 18px;
+                        line-height: 1.6;
+                        padding: 22px 20px;
+                    }
+                }
+            }
+
+            .accordion-body {
+                padding: 20px 30px;
+                background-color: $white;
+                box-shadow: 8px 8px 32px 0 rgba(0, 72, 180, 0.08);
+                backdrop-filter: blur(5px);
+
+                p {
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 400;
+
+                    @include breakpoint(max-sm) {
+                        width: 100%;
+                        font-size: 14px;
+                        line-height: 28px;
+                    }
+                }
+            }
+        }
+
+        .accordion-button {
+            background-color: $white;
+            color: $header-color;
+            box-shadow: 8px 8px 32px 0 rgba(36, 12, 135, 0.08);
+            backdrop-filter: blur(5px);
+
+            &::after {
+                content: "\f324";
+                font-family: "Font Awesome 6 Pro";
+                background: transparent;
+                font-weight: 900;
+                transition: all 0.3s ease-in-out !important;
+                color: $theme-color-2;
+            }
+
+            &:not(.collapsed) {
+                background-color: $white;
+                box-shadow: 8px 8px 32px 0 rgba(36, 12, 135, 0.08);
+                backdrop-filter: blur(5px);
+                color: $header-color;
+
+                &::after {
+                    content: "\f322";
+                    font-family: "Font Awesome 6 Pro";
+                    background: transparent;
+                    font-weight: 900;
+                    color: $theme-color;
+                    transform: rotate(0);
+                }
+            }
+         }
+      }
+    }
+}
+
+.faq-section {
+    border-top: 1px solid rgba(203, 204, 207, 0.24);
+}

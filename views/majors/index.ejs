@@ -1,0 +1,132 @@
+<%- include('../partials/head', { title: 'أهم التخصصات - Hikma' }) %>
+
+<body class="smooth-scroll-yes">
+    <div id="preloader" class="preloader">
+        <div class="animation-preloader">
+            <div class="spinner"></div>
+            <div class="txt-loading">
+                <span data-text-preloader="H" class="letters-loading">H</span>
+                <span data-text-preloader="I" class="letters-loading">I</span>
+                <span data-text-preloader="K" class="letters-loading">K</span>
+                <span data-text-preloader="M" class="letters-loading">M</span>
+                <span data-text-preloader="A" class="letters-loading">A</span>
+            </div>
+            <p class="text-center">Loading</p>
+        </div>
+        <div class="loader">
+            <div class="row">
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <button id="back-top" class="back-to-top show">
+        <i class="fa-regular fa-arrow-up"></i>
+    </button>
+
+    <%- include('../partials/header') %>
+
+    <section class="breadcrumb-wrapper fix bg-cover" style="background-image: url('/assets/img/inner-page/breadcrumb.jpg');">
+        <div class="shape">
+            <img src="/assets/img/inner-page/shape.png" alt="img">
+        </div>
+        <div class="container">
+            <div class="page-heading">
+                <h1 class="breadcrumb-title">أهم التخصصات</h1>
+                <ul class="breadcrumb-list">
+                    <li><a href="/">الرئيسية</a></li>
+                    <li><i class="fa-solid fa-chevron-right"></i></li>
+                    <li>أهم التخصصات</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="news-standard-section section-padding fix" dir="rtl">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-8 col-12 text-right">
+                    <div class="section-title mb-5">
+                        <span>تعرف على خياراتك</span>
+                        <h2>التخصصات الأكاديمية والمهنية المدعومة</h2>
+                        <% if (typeof categoryName !== 'undefined') { %>
+                            <p class="mt-2"><strong><%= categoryName %></strong></p>
+                        <% } else { %>
+                            <p class="mt-2">استعرض التخصصات حسب الفئة التعليمية ثم انتقل لصفحة التفاصيل.</p>
+                        <% } %>
+                    </div>
+
+                    <div class="row gy-4">
+                        <% [
+                            { label: 'التكوين المهني (DUT)', items: dut },
+                            { label: 'بكالوريوس (Baccalaurios)', items: bachelor },
+                            { label: 'دكتوراه (Doctorat)', items: doctorate }
+                        ].forEach(section => { %>
+                            <% if (section.items && section.items.length) { %>
+                                <div class="col-12 mb-4">
+                                    <div class="news-standard-post">
+                                        <div class="news-content">
+                                            <div class="section-title text-right">
+                                                <h3><%= section.label %></h3>
+                                            </div>
+                                            <div class="row g-4">
+                                                <% section.items.forEach(major => { %>
+                                                    <div class="col-lg-6 col-12">
+                                                        <div class="blog-card" style="border: 1px solid #e7e7e7; padding: 22px; border-radius: 18px;">
+                                                            <div class="blog-card-content text-right">
+                                                                <h4><a href="/majors/<%= major.id %>"><%= major.title %></a></h4>
+                                                                <p><%= major.description %></p>
+                                                                <ul class="news-list" style="justify-content: flex-start; gap: 10px; padding: 0;">
+                                                                    <li><i class="fa-solid fa-clock"></i> <%= major.duration %></li>
+                                                                    <li><i class="fa-solid fa-language"></i> <%= major.language %></li>
+                                                                </ul>
+                                                            </div>
+                                                            <a href="/majors/<%= major.id %>" class="theme-btn mt-3">عرض التفاصيل</a>
+                                                        </div>
+                                                    </div>
+                                                <% }) %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% } %>
+                        <% }) %>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="main-sideber mr-lg-4 ml-lg-0">
+                        <div class="news-sideber-box">
+                            <div class="wid-title text-right">
+                                <h3>الفئات</h3>
+                            </div>
+                            <div class="news-widget-categories text-right">
+                                <ul style="padding: 0;">
+                                    <li><a href="/majors/dut"><i class="fa-solid fa-chevron-left" style="margin-left: 8px;"></i> التكوين المهني (DUT)</a></li>
+                                    <li><a href="/majors/bachelor"><i class="fa-solid fa-chevron-left" style="margin-left: 8px;"></i> بكالوريوس (Baccalaurios)</a></li>
+                                    <li><a href="/majors/doctorate"><i class="fa-solid fa-chevron-left" style="margin-left: 8px;"></i> دكتوراه (Doctorat)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="news-sideber-box">
+                            <div class="wid-title text-right">
+                                <h3>لماذا تختار Hikma</h3>
+                            </div>
+                            <div class="recent-post-area text-right">
+                                <p>ندعمك باختيار التخصص الصحيح وموازنة التكلفة والجودة الأكاديمية، ونربطك بأفضل الجامعات الشريكة في أوروبا وتركيا.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('../partials/footer') %>
+    <%- include('../partials/scripts') %>
+</body>
+</html>
+
+

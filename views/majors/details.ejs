@@ -1,0 +1,97 @@
+<%- include('../partials/head', { title: major.title + ' - Hikma' }) %>
+
+<body class="smooth-scroll-yes">
+    <div id="preloader" class="preloader">
+        <div class="animation-preloader">
+            <div class="spinner"></div>
+            <div class="txt-loading">
+                <span data-text-preloader="H" class="letters-loading">H</span>
+                <span data-text-preloader="I" class="letters-loading">I</span>
+                <span data-text-preloader="K" class="letters-loading">K</span>
+                <span data-text-preloader="M" class="letters-loading">M</span>
+                <span data-text-preloader="A" class="letters-loading">A</span>
+            </div>
+            <p class="text-center">Loading</p>
+        </div>
+        <div class="loader">
+            <div class="row">
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <button id="back-top" class="back-to-top show"><i class="fa-regular fa-arrow-up"></i></button>
+    <%- include('../partials/header') %>
+
+    <section class="breadcrumb-wrapper fix bg-cover" style="background-image: url('/assets/img/inner-page/breadcrumb.jpg');">
+        <div class="container">
+            <div class="page-heading">
+                <h1 class="breadcrumb-title"><%= major.title %></h1>
+                <ul class="breadcrumb-list">
+                    <li><a href="/">الرئيسية</a></li>
+                    <li><i class="fa-solid fa-chevron-right"></i></li>
+                    <li><a href="/majors">أهم التخصصات</a></li>
+                    <li><i class="fa-solid fa-chevron-right"></i></li>
+                    <li><%= major.title %></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="news-standard-section section-padding fix" dir="rtl">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-8 col-12 text-right">
+                    <div class="news-standard-post p-4" style="border: 1px solid #e7e7e7; border-radius: 18px;">
+                        <h2><%= major.title %></h2>
+                        <p><strong>الفئة:</strong> <%= major.categoryName %></p>
+                        <p><strong>المدة:</strong> <%= major.duration %></p>
+                        <p><strong>لغة التدريس:</strong> <%= major.language %></p>
+                        <p><%= major.description %></p>
+                        <div class="mt-4">
+                            <h4>تفاصيل التخصص</h4>
+                            <p><%= major.details %></p>
+                        </div>
+                        <div class="mt-4">
+                            <h4>فرص العمل بعد التخرج</h4>
+                            <ul class="news-list" style="flex-wrap: wrap; gap: 8px; padding: 0;">
+                                <% major.opportunities.forEach(opportunity => { %>
+                                    <li><i class="fa-solid fa-check"></i> <%= opportunity %></li>
+                                <% }) %>
+                            </ul>
+                        </div>
+
+                        <div class="mt-5">
+                            <h4>الجامعات التي تقدم هذا التخصص</h4>
+                            <ul style="padding: 0; list-style: none;">
+                                <% offeringUnis.forEach(uni => { %>
+                                    <li style="margin-bottom: 10px;"><a href="/universities/details/<%= uni.id %>"><i class="fa-solid fa-chevron-left" style="margin-left: 8px;"></i><%= uni.title %> - <%= uni.city %></a></li>
+                                <% }) %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="news-sideber-box text-right p-4" style="border: 1px solid #e7e7e7; border-radius: 18px;">
+                        <h4>تنقل سريع</h4>
+                        <ul style="padding: 0; list-style: none;">
+                            <li><a href="/majors">عرض جميع التخصصات</a></li>
+                            <li><a href="/services">خدماتنا</a></li>
+                            <li><a href="/visas">تأشيرات الدراسة</a></li>
+                            <li><a href="/contact">تواصل معنا</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('../partials/footer') %>
+    <%- include('../partials/scripts') %>
+</body>
+</html>
+
+

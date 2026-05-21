@@ -1,0 +1,362 @@
+.contact-wrapper-2 {
+    @include flex;
+    gap: 325px;
+
+    @include breakpoint (max-xxl) {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .contact-from-box {
+        padding: 60px 48px;
+        background-color: $theme-color-2;
+        border-radius: 24px;
+        width: 644px;
+
+        @include breakpoint (max-xxl) {
+           padding: 30px;
+        }
+
+        h3 {
+            color: $white;
+            font-size: 32px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-align: center;
+
+            @include breakpoint (max-xxl) {
+               font-size: 25px;
+               margin-bottom: 20px;
+            }
+
+            @include breakpoint (max-sm) {
+               font-size: 20px;
+            }
+        }
+
+        .form-clt {
+
+             input,textarea {
+                width: 100%;
+                outline: none;
+                border: none;
+                background: transparent;
+                padding: 16px 0;
+                font-weight: 400;
+                font-size: 16px;
+                color: rgba(255, 255, 255, 0.7);
+                line-height: 1;
+                border-bottom: 1px solid rgba(203, 204, 207, 0.24);
+
+                &::placeholder {
+                    color: rgba(255, 255, 255, 0.7);
+                }
+            }
+
+            .nice-select {
+                width: 100% !important;
+                padding: 0;
+                padding-bottom: 10px;
+                padding-top: 20px;
+                font-size: 16px;
+                text-transform: capitalize;
+                border-radius: 0;
+                background-color: transparent;
+                border: none;
+                box-shadow: none;
+                font-size: 16px;
+                color: rgba(255, 255, 255, 0.7);
+                font-weight: 400;
+                width: initial;
+                border-bottom: 1px solid rgba(203, 204, 207, 0.24);
+    
+                &::after {
+                    right: 0;
+                    width: 10px;
+                    height: 8px;
+                    border-bottom: 2px solid transparent;
+                    border-right: 2px solid transparent;
+                    margin-top: 0;
+                    background-color: rgba(255, 255, 255, 0.7);
+                    clip-path: polygon(100% 0, 49% 100%, 0 0);
+                    -webkit-transform: rotate(0eg);   
+                    transform: rotate(0deg); 
+                    top: 36%;
+                }
+    
+                .list {
+                    width: 100%;
+                    background-color: $bg-color;
+                    top: 60%;
+                    font-size: 16px;
+                    color: $header-color;
+                }
+    
+                .focus {
+                    background-color: transparent;
+                    font-weight: 400;
+                    color: $text-color;
+                }
+    
+                .option {
+                    border: none;
+    
+                    &:hover {
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+
+        .contact-btn {
+            margin-top: 48px;
+            text-align: center;
+            margin-bottom: 48px;
+
+            @include breakpoint (max-xxl) {
+              margin-top: 30px;
+               margin-bottom: 30px;
+            }
+
+            .theme-btn {
+                color: $white;
+
+                &:hover {
+                    border: 1px solid $theme-color;
+                }
+            }
+        }
+
+        h5 {
+            font-weight: 500;
+            color: $white;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 40px;
+            border-bottom: 1px solid rgba(203, 204, 207, 0.24);
+            padding-bottom: 10px;
+            margin-bottom: 5px;
+
+             @include breakpoint (max-xxl) {
+               font-size: 25px;
+            }
+
+            @include breakpoint (max-sm) {
+               font-size: 20px;
+            }
+
+            a {
+                 color: $white;
+            }
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+    }
+
+    .video-btn {
+        width: 88px;
+        height: 88px;
+        line-height: 88px;
+        text-align: center;
+        background-color: $theme-color;
+        color: $white;
+        position: relative;
+        font-size: 16px;
+        border-radius: 100px;
+        z-index: 999;
+        display: inline-block;
+
+         @include breakpoint (max-lg) {
+            margin-left: 30px;
+        }
+
+         @include breakpoint (max-sm) {
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            margin-left: 15px;
+        }
+
+        &::before {
+            @include before;
+            width: 120px;
+            height: 120px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background: rgba(225, 56, 51, 0.24);
+            border-radius: 100%;
+            border: 2px solid $white;
+
+             @include breakpoint (max-sm) {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+}
+
+.contact-section-2 {
+    background-attachment: fixed;
+}
+
+.contact-from-wrapper {
+    background-color: $bg-color;
+    border-radius: 16px;
+    padding: 48px;
+
+     @include breakpoint (max-xxl) {
+        padding: 30px;
+    }
+
+    .form-clt {
+        position: relative;
+
+        span {
+            color: $header-color;
+            font-size: 18px;
+            font-weight: 500;
+            font-family: $heading-font;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        input,textarea {
+            width: 100%;
+            border: none;
+            outline: none;
+            background: $white;
+            color: $text-color;
+            border-radius: 100px;
+            padding: 18px 20px;
+
+            @include breakpoint (max-md){
+                padding: 14px 20px;
+            }
+
+            @include breakpoint (max-sm){
+                padding: 12px 18px;
+            }
+
+            &::placeholder {
+                color: $text-color;
+            }
+        }
+
+        textarea {
+            padding-bottom: 100px;
+            resize: none;
+            border-radius: 40px;
+        }
+    }
+
+    .cheak-list-item {
+        margin-top: 30px;
+        margin-bottom: 48px;
+
+         @include breakpoint (max-xxl) {
+           margin-bottom: 30px;
+        }
+
+        .cheak-list {
+            @include flex;
+            gap: 80px;
+            margin-bottom: 24px;
+
+             @include breakpoint (max-xxl) {
+              flex-wrap: wrap;
+              gap: 22px;
+            } 
+
+            .form-check {
+                flex-basis: 200px;
+            }
+
+            .form-check-label {
+                font-size: 18px;
+                color: $header-color;
+                font-weight: 500;
+                font-family: $heading-font;
+            }
+            .form-check .form-check-input {
+                float: left;
+                transform: translateY(0px);
+                border-radius: 100px;
+                border: 1px solid $text-color;
+                background-color: $white;
+            }
+            .form-check .form-check-input:checked {
+                background-color: $theme-color-2;
+                border: 1px solid $theme-color-2;
+            }
+        }
+    }
+
+    .theme-btn {
+        width: 100%;
+
+        &.style-2 {
+            width: initial;
+        }
+    }
+}
+
+.contact-icon-item {
+    @include flex;
+    gap: 24px;
+    background-color: $bg-color;
+    border-radius: 16px;
+    padding: 30px;
+
+    @include breakpoint (max-lg) {
+        flex-wrap: wrap;
+    }
+
+    .icon {
+        width: 64px;
+        height: 64px;
+        line-height: 64px;
+        text-align: center;
+        border-radius: 100px;
+        background-color: $header-color;
+        color: $white;
+        @include transition;
+        font-size: 20px;
+    }
+
+    .content {
+
+        p {
+            margin-bottom: 5px;
+        }
+
+        h6 {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 144%;
+        }
+    }
+
+     &:hover {
+        .icon {
+            background-color: $theme-color;
+        }
+    }
+}
+
+.map-items {
+    .googpemap {
+        iframe {
+            width: 100%;
+            height: 724px;
+
+            @include breakpoint (max-sm){
+                height: 400px;
+            }
+        }
+    }
+}

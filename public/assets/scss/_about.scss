@@ -1,0 +1,280 @@
+.about-wrapper {
+
+    .about-image {
+        max-width: 375px;
+        position: relative;
+        z-index: 9;
+
+        @include breakpoint (max-xxl) {
+            max-width: initial;
+        }
+        
+        img {
+            @include imgw;
+            border-radius: 16px;
+        }
+
+        .about-image-2 {
+            position: absolute;
+            bottom: -170px;
+            right: -238px;
+
+             @include breakpoint (max-xxl) {
+               max-width: 250px;
+               right: 0;
+               bottom: 0;
+            }
+        }
+
+        .bg-shape {
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+
+             @include breakpoint (max-xxl) {
+               display: none;
+            }
+
+            img {
+                width: initial;
+                height: initial;
+            }
+        }
+
+        .plane-shape {
+            position: absolute;
+            left: -38px;
+            bottom: -163px;
+            z-index: -1;
+
+            @include breakpoint (max-xxl) {
+               display: none;
+            }
+
+             img {
+                width: initial;
+                height: initial;
+            }
+        }
+
+        .top-shape {
+            position: absolute;
+            right: -200px;
+            top: 0;
+
+            @include breakpoint (max-xxl) {
+               display: none;
+            }
+
+            img {
+                width: initial;
+                height: initial;
+            }
+        }
+    }
+
+    .about-content {
+        .text {
+            margin-top: 24px;
+            padding-left: 40px;
+            border-left: 3px solid $border-color-2;
+            margin-bottom: 30px;
+
+             @include breakpoint (max-xxl) {
+               border-left: none;
+               padding-left: 0;
+            }
+        }
+
+        .about-item {
+            @include flex;
+            justify-content: space-between;
+            border-top: 1px solid rgba(203, 204, 207, 0.24);
+            padding-top: 24px;
+
+             @include breakpoint (max-lg) {
+              flex-wrap: wrap;
+              gap: 30px;
+            }
+
+            .content {
+                span {
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: $header-color;
+                    display: inline-block;
+                    margin-bottom: 5px;
+
+                    img {
+                        margin-right: 8px;
+                    }
+                }
+            }
+        }
+
+        .list {
+            border-bottom: 1px solid rgba(203, 204, 207, 0.24);
+            padding: 24px 0 32px;
+            margin-bottom: 48px;
+
+            @include breakpoint (max-xxl) {
+               margin-bottom: 30px;
+               padding: 24px 0 30px;
+            }
+
+            li {
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+
+                @include breakpoint (max-xxl) {
+                   font-size: 14px;
+                }
+
+                i {
+                    color: $theme-color-2;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+}
+
+.about-section {
+    position: relative;
+    z-index: 9;
+
+    .top-shape {
+        position: absolute;
+        right: 0;
+        top: -50px;
+        z-index: -1;
+
+        @include breakpoint (max-xxl) {
+              display: none;
+          }
+    }
+}
+
+.about-wrapper-3 {
+
+    .about-content {
+        .text {
+            margin-top: 20px;
+            max-width: 616px;
+            border-bottom: 1px solid rgba(203, 204, 207, 0.24);
+            padding-bottom: 24px;
+            margin-bottom: 30px;
+        }
+
+        .about-list-item {
+           display: flex;
+           gap: 32px;
+
+           @include breakpoint (max-xxl) {
+             flex-wrap: wrap;
+             gap: 25px;
+           }
+
+            .loading-box {
+                height: 256px;
+                width: 214px;
+                border-radius: 16px;
+                position: relative;
+                text-align: center;
+
+                .loading-boxs {
+                    height: 200px;
+                    width: 200px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: #0a4ebd;
+                    border-radius: 16px;
+
+                    .circle-bar {
+                      position: relative;
+
+                    strong {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 28px;
+                        font-weight: bold;
+                        color: $white;
+                    }
+                }
+            }
+
+            h6 {
+                color: $white;
+                font-weight: 500;
+                font-size: 14px;
+            }
+           }
+
+           .list-item {
+
+             .list {
+                 margin-bottom: 48px;
+
+                    li {
+                        font-size: 18px;
+                        font-weight: 500;
+                        color: $header-color;
+                        font-family: $heading-font;
+
+                        @include breakpoint (max-xxl) {
+                            font-size: 16px;
+                        }
+
+                        &:not(:last-child) {
+                            margin-bottom: 15px;
+                        }
+
+                        i {
+                            margin-right: 8px;
+                            color: $theme-color-2;
+                        }
+                    }
+                }
+           }
+        }
+    }
+
+    .about-image {
+        img {
+            @include imgw;
+            border-radius: 8px;
+        }
+
+        &.tp-clip-anim {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    overflow: hidden;
+    position: relative;
+    & .tp-anim-img {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    & .mask {
+        background-size: cover;
+        background-position: center;
+        transform: scale(1.005);
+    }
+    >* {
+        grid-area: 1 / 1 / 2 / 2;
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+    }
+       }
+    }
+}

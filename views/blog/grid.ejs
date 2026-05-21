@@ -1,0 +1,72 @@
+<%- include('../partials/head', { title: 'شبكة المدونة - Hikma' }) %>
+
+<body class="smooth-scroll-yes">
+    <div id="preloader" class="preloader">
+        <div class="animation-preloader">
+            <div class="spinner"></div>
+            <div class="txt-loading">
+                <span data-text-preloader="H" class="letters-loading">H</span>
+                <span data-text-preloader="I" class="letters-loading">I</span>
+                <span data-text-preloader="K" class="letters-loading">K</span>
+                <span data-text-preloader="M" class="letters-loading">M</span>
+                <span data-text-preloader="A" class="letters-loading">A</span>
+            </div>
+            <p class="text-center">Loading</p>
+        </div>
+        <div class="loader">
+            <div class="row">
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <button id="back-top" class="back-to-top show"><i class="fa-regular fa-arrow-up"></i></button>
+    <%- include('../partials/header') %>
+
+    <section class="breadcrumb-wrapper fix bg-cover" style="background-image: url('/assets/img/inner-page/breadcrumb.jpg');">
+        <div class="container">
+            <div class="page-heading">
+                <h1 class="breadcrumb-title">شبكة المدونة</h1>
+                <ul class="breadcrumb-list">
+                    <li><a href="/">الرئيسية</a></li>
+                    <li><i class="fa-solid fa-chevron-right"></i></li>
+                    <li>شبكة المدونة</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="news-standard-section section-padding fix" dir="rtl">
+        <div class="container">
+            <div class="row g-4">
+                <% blogs.forEach(blog => { %>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="blog-card" style="border: 1px solid #e7e7e7; border-radius: 18px; overflow: hidden;">
+                            <div class="blog-card-image">
+                                <img src="<%= blog.image %>" alt="<%= blog.title %>">
+                            </div>
+                            <div class="blog-card-content p-4 text-right">
+                                <ul class="news-list" style="justify-content: flex-start; gap: 10px; padding: 0;">
+                                    <li><i class="fa-solid fa-tag"></i> <%= blog.category %></li>
+                                    <li><i class="fa-solid fa-clock"></i> <%= blog.readTime %></li>
+                                </ul>
+                                <h4><a href="/blog/<%= blog.id %>"><%= blog.title %></a></h4>
+                                <p><%= blog.description %></p>
+                                <a href="/blog/<%= blog.id %>" class="theme-btn">قراءة أكثر</a>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </section>
+
+    <%- include('../partials/footer') %>
+    <%- include('../partials/scripts') %>
+</body>
+</html>
+
+

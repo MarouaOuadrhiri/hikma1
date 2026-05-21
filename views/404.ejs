@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<!--<< Header Area >>-->
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Gramentheme">
+    <meta name="description" content="<%= typeof description !== 'undefined' ? description : 'حكمة للدراسة في تركيا - استشارات تعليمية وتأشيرات' %>">
+    <!-- ======== Page title ============ -->
+    <title>Visaway – Immigration & Visa Consulting HTML Template</title>
+    <!--<< Favcion >>-->
+    <link rel="shortcut icon" href="/assets/img/favicon.png">
+    <!--<< Bootstrap min.css >>-->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <!--<< All Min Css >>-->
+    <link rel="stylesheet" href="/assets/css/all.min.css">
+    <!--<< Animate.css >>-->
+    <link rel="stylesheet" href="/assets/css/animate.css">
+    <!--<< Magnific Popup.css >>-->
+    <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+    <!--<< MeanMenu.css >>-->
+    <link rel="stylesheet" href="/assets/css/meanmenu.css">
+    <!--<< Odometer.css >>-->
+    <link rel="stylesheet" href="/assets/css/odometer.css">
+    <!--<< Swiper Bundle.css >>-->
+    <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
+    <!--<< Nice Select.css >>-->
+    <link rel="stylesheet" href="/assets/css/nice-select.css">
+    <!--<< Main.css >>-->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+</head>
+
+    <body class="smooth-scroll-yes">
+
+       
+        
+        <!-- Preloader Start -->
+        <div id="preloader" class="preloader">
+            <div class="animation-preloader">
+                <div class="spinner">                
+                </div>
+                <div class="txt-loading">
+                    <span data-text-preloader="V" class="letters-loading">
+                        V
+                    </span>
+                     <span data-text-preloader="I" class="letters-loading">
+                        I
+                    </span>
+                     <span data-text-preloader="S" class="letters-loading">
+                        S
+                    </span>
+                    <span data-text-preloader="A" class="letters-loading">
+                        A
+                    </span>
+                    <span data-text-preloader="W" class="letters-loading">
+                        W
+                    </span>
+                     <span data-text-preloader="A" class="letters-loading">
+                        A
+                    </span>
+                     <span data-text-preloader="Y" class="letters-loading">
+                        Y
+                    </span>
+                </div>
+                <p class="text-center">Loading</p>
+            </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        <!-- GT Back To Top Start -->
+        <button id="back-top" class="back-to-top show">
+            <i class="fa-regular fa-arrow-up"></i>
+        </button>
+
+        <!-- GT MouseCursor Start -->
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner"></div>
+
+        <%- include('partials/header') %>
+
+<style>
+/* Mega Menu Custom Styles */
+@media (min-width: 1200px) {
+    .header-main {
+        position: relative !important;
+    }
+    .header-main .main-menu ul li.mega-menu-parent {
+        position: static !important;
+    }
+    .header-main .main-menu ul li.mega-menu-parent .mega-submenu {
+        width: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: 100% !important;
+        padding: 0 !important;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1) !important;
+        transform-origin: top center !important;
+        transition: all 0.3s ease-in-out !important;
+        /* Force hidden by default */
+        visibility: hidden !important;
+        opacity: 0 !important;
+        transform: scaleY(0) translateZ(0px) !important;
+    }
+    /* Explicitly force display on hover */
+    .header-main .main-menu ul li.mega-menu-parent:hover .mega-submenu {
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: scaleY(1) translateZ(0px) !important;
+    }
+}
+@media (max-width: 1199px) {
+    .mega-submenu {
+        width: 100% !important;
+    }
+}
+
+.mega-menu-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #174093; /* brand color */
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f0f0f0;
+    text-align: right;
+}
+
+.mega-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mega-menu-list li {
+    margin-bottom: 10px;
+}
+
+/* Ensure mega menu links override default submenu link styles */
+.header-main .main-menu ul li .mega-submenu li a:not(.theme-btn) {
+    color: #555 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    text-decoration: none;
+    transition: 0.3s;
+    display: block;
+    padding: 0 !important;
+    text-transform: none !important;
+    text-align: right !important;
+}
+
+.header-main .main-menu ul li .mega-submenu li a:not(.theme-btn):hover {
+    color: #cc181e !important; /* brand red */
+    padding-right: 5px !important;
+}
+
+.mega-submenu .theme-btn:hover {
+    background-color: #cc181e !important;
+    color: #fff !important;
+}
+</style>
+
+<style>
+/* Mega Menu Custom Styles */
+@media (min-width: 1200px) {
+    .header-main {
+        position: relative !important;
+    }
+    .header-main .main-menu ul li.mega-menu-parent {
+        position: static !important;
+    }
+    .header-main .main-menu ul li.mega-menu-parent .mega-submenu {
+        width: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: 100% !important;
+        padding: 0 !important;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1) !important;
+        transform-origin: top center !important;
+        transition: all 0.3s ease-in-out !important;
+        /* Force hidden by default */
+        visibility: hidden !important;
+        opacity: 0 !important;
+        transform: scaleY(0) translateZ(0px) !important;
+    }
+    /* Explicitly force display on hover */
+    .header-main .main-menu ul li.mega-menu-parent:hover .mega-submenu {
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: scaleY(1) translateZ(0px) !important;
+    }
+}
+@media (max-width: 1199px) {
+    .mega-submenu {
+        width: 100% !important;
+    }
+}
+
+.mega-menu-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #174093; /* brand color */
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f0f0f0;
+    text-align: right;
+}
+
+.mega-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mega-menu-list li {
+    margin-bottom: 10px;
+}
+
+/* Ensure mega menu links override default submenu link styles */
+.header-main .main-menu ul li .mega-submenu li a:not(.theme-btn) {
+    color: #555 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    text-decoration: none;
+    transition: 0.3s;
+    display: block;
+    padding: 0 !important;
+    text-transform: none !important;
+    text-align: right !important;
+}
+
+.header-main .main-menu ul li .mega-submenu li a:not(.theme-btn):hover {
+    color: #cc181e !important; /* brand red */
+    padding-right: 5px !important;
+}
+
+.mega-submenu .theme-btn:hover {
+    background-color: #cc181e !important;
+    color: #fff !important;
+}
+</style> 
+
+        <!-- Search Area Start -->
+        <div class="search-popup">
+            <div class="search-popup__overlay search-toggler"></div>
+            <div class="search-popup__content">
+                <form role="search" method="get" class="search-popup__form" action="#">
+                    <input type="text" id="search" name="search" placeholder="Search Here...">
+                    <button type="submit" aria-label="search submit" class="search-btn">
+                        <span><i class="fa-regular fa-magnifying-glass"></i></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Breadcrumb-Wrapper Section Start -->
+        <section class="breadcrumb-wrapper fix bg-cover" style="background-image: url(assets/img/inner-page/breadcrumb.jpg);">
+            <div class="shape">
+                <img src="assets/img/inner-page/shape.png" alt="img">
+            </div>
+            <div class="container">
+                <div class="page-heading">
+                    <h1 class="breadcrumb-title">Error 404</h1>
+                    <ul class="breadcrumb-list">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </li>
+                        <li>
+                           Error 404
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+      <!--Error Section Start -->
+       <section class="error-section section-padding fix">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="error-item">
+                            <div class="error-image">
+                                <img src="assets/img/inner-page/404.png" alt="img">
+                            </div>
+                            <div class="error-content">
+                                <h2>Page Not Found – Let’s Get You Back on Track</h2>
+                                <p>
+                                    Sorry, the page you’re looking for cannot be found. But don’t worry—we’re here to guide you back to the right path. Explore our services today!
+                                </p>
+                                <a href="/" class="theme-btn">
+                                   back to home
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </section>
+
+         <!--Footer Section Start -->
+<footer class="footer-section fix bg-cover" style="background-image: url(/assets/img/home-1/footer-bg.jpg);">
+    <div class="container">
+        <div class="footer-wrapper">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="footer-item">
+                        <h2>
+                            <a href="tel:+16336547896">+163 3654 7896</a>
+                        </h2>
+                        <h2 class="text">شارع 69، الجادة الخامسة، الولايات المتحدة</h2>
+                        <div class="footer-list-item">
+                            <a href="/">
+                                <img src="/assets/img/logo/Hikma_logo_final.png" alt="img" style="max-height: 50px;">
+                            </a>
+                            <ul class="footer-list">
+                                <li>
+                                    <a href="/">الرئيسية</a>
+                                </li>
+                                <li>
+                                    <a href="/about">من نحن</a>
+                                </li>
+                                <li>
+                                    <a href="/visas">التأشيرات</a>
+                                </li>
+                                <li>
+                                    <a href="/blog">الصفحات</a>
+                                </li>
+                                <li>
+                                    <a href="/blog">المقالات</a>
+                                </li>
+                                <li>
+                                    <a href="/contact">اتصل بنا</a>
+                                </li>
+                            </ul>
+                            <div class="social-icon">
+                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--Footer-Bottom Section Start -->
+<div class="footer-bottom">
+    <div class="container">
+        <div class="footer-wrapper">
+            <p>
+                حقوق الطبع والنشر © <span>GRAMENTHEME</span> جميع الحقوق محفوظة.
+            </p>
+            <ul class="bottom-list">
+                <li>
+                    <a href="/contact">الشروط والأحكام</a>
+                </li>
+                <li>
+                    <a href="/contact">سياسة الخصوصية</a>
+                </li>
+                <li>
+                    <a href="/contact">اتصل بنا</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+        <!--<< All JS Plugins >>-->
+<script src="/assets/js/jquery-3.7.1.min.js"></script>
+<!--<< Viewport Js >>-->
+<script src="/assets/js/viewport.jquery.js"></script>
+<!--<< Bootstrap Js >>-->
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<!--<< nice-selec Js >>-->
+<script src="/assets/js/jquery.nice-select.min.js"></script>
+<!--<< Waypoints Js >>-->
+<script src="/assets/js/jquery.waypoints.js"></script>
+<!--<< Odometer Js >>-->
+<script src="/assets/js/odometer.min.js"></script>
+<!--<< Swiper Slider Js >>-->
+<script src="/assets/js/swiper-bundle.min.js"></script>
+<!--<< MeanMenu Js >>-->
+<script src="/assets/js/jquery.meanmenu.min.js"></script>
+<!--<< Magnific Popup Js >>-->
+<script src="/assets/js/jquery.magnific-popup.min.js"></script>
+<!--<< Wow Animation Js >>-->
+<script src="/assets/js/wow.min.js"></script>
+<!--<< circle-progress Js >>-->
+<script src="/assets/js/circle-progress.js"></script>
+<!--<< gsap Js >>-->
+<script src="/assets/js/gsap.js"></script>
+<!--<< lenis.min. Js >>-->
+<script src="/assets/js/lenis.min.js"></script>
+<!--<< ScrollTrigger.min. Js >>-->
+<script src="/assets/js/ScrollTrigger.min.js"></script>
+<!--<< SplitText.min. Js >>-->
+<script src="/assets/js/SplitText.min.js"></script>
+<!--<< Main.js >>-->
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,370 @@
+.testimonial-wrapper {
+    margin-top: 60px;
+
+    .testimonia-image {
+        position: relative;
+        height: 370px;
+        overflow: hidden;
+        border-radius: 16px;
+
+        @include breakpoint (max-lg) {
+            height: initial;
+        }
+
+        .video-btn {
+            width: 64px;
+            height: 64px;
+            line-height: 64px;
+            border-radius: 100px;
+            text-align: center;
+            background-color: $theme-color;
+            color: $white;
+            display: inline-block;
+            position: absolute;
+            left: 35px;
+            top: 30px;
+            z-index: 9;
+
+            &::before {
+                @include before;
+                border-radius: 1000px;
+                border: 1px solid rgba(203, 204, 207, 0.24);
+                width: 80px;
+                height: 80px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+        }
+
+        h5 {
+            font-weight: 500;
+            color: $white;
+            position: absolute;
+            left: 24px;
+            bottom: 24px;
+            z-index: 9;
+        }
+
+        img {
+            @include imgw;
+            border-radius: 16px;
+            object-fit: cover;
+        }
+
+         &::after {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 0%;
+            left: 50%;
+            top: 50%;
+            background-color: rgba(255,255,255,.3);
+            transform: translate(-50%,-50%) rotate(-45deg);
+            z-index: 1;
+        }
+
+        &:hover {
+             &::after {
+                height: 250%;
+                transition: all 600ms linear;
+                background-color: transparent;
+            }
+        }
+
+        
+    }
+
+    .testimonial-box {
+        border-radius: 16px;
+        background-color: $bg-color;
+        padding: 30px 24px;
+
+        .star {
+            color: $theme-color;
+            margin-bottom: 24px;
+        }
+
+        p {
+            font-style: italic;
+            font-weight: 500;
+            max-width: 307px;
+        }
+        
+        .info-item {
+            @include flex;
+            gap: 12px;
+            margin-top: 90px;
+
+            @include breakpoint (max-xxl) {
+                margin-top: 40px;
+            }
+
+             @include breakpoint (max-lg) {
+                margin-top: 30px;
+            }
+
+            .client-image {
+                img {
+                    border-radius: 100%;
+                }
+            }
+        }
+    }
+}
+
+.testimonial-wrapper-2 {
+    margin-top: 60px;
+
+    @include breakpoint (max-sm) {
+        margin-top: 30px;
+    }
+
+    .testimonial-image {
+        height: 305px;
+
+        img {
+            @include imgw;
+            border-radius: 16px;
+            object-fit: cover;
+        }
+    }
+
+    .testimonial-item {
+        @include flex;
+        gap: 30px;
+
+         @include breakpoint (max-xxl) {
+               flex-wrap: wrap;
+          }
+
+        .testimonial-left {
+            @include transition;
+
+            .testimonial-box {
+                padding: 40px;
+                background-color: $theme-color-2;
+                border-radius: 16px;
+                position: relative;
+                 @include transition;
+
+                 @include breakpoint (max-xxl) {
+                    padding: 30px;
+                 }
+
+                &::before {
+                    position: absolute;
+                    bottom: -23px;
+                    content: "";
+                    left: 32px;
+                    width: 35px;
+                    height: 24px;
+                    background-color: $theme-color-2;
+                    clip-path: polygon(100% 0, 0 0, 100% 100%);
+                }
+
+                .star {
+                    color: $white;
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    max-width: 549px;
+                    font-size: 20px;
+                    font-weight: 500;
+                    font-family: $heading-font;
+                    color: $white;
+                    line-height: 140%;
+
+                    @include breakpoint (max-xxl) {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .info-item {
+                @include flex;
+                gap: 10px;
+                margin-top: 24px;
+                margin-left: 80px;
+
+                img {
+                    border: 1px solid $theme-color;
+                    border-radius: 100%;
+                }
+
+                .content {
+                    h5 {
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+
+        .right-item {
+             width: 100px;
+
+            .test-slider {
+                height: 300px; 
+
+                @include breakpoint (max-xxl) {
+                    height: 80px;
+                }
+            }
+
+            .client-image {
+                img {
+                    border-radius: 8px;
+                     transition: all 0.5s ease;
+                }
+            }
+        }
+    }
+}
+
+.testimonial-wrapper-3 {
+    margin-top: 60px;
+    
+    .testimonial-thumb {
+         border-radius: 16px;
+         
+        img {
+            @include imgw;
+            border-radius: 16px;
+        }
+
+         &.tp-clip-anim {
+            width: 100%;
+            display: grid;
+            align-items: center;
+            justify-items: center;
+            overflow: hidden;
+            position: relative;
+            & .tp-anim-img {
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            & .mask {
+                background-size: cover;
+                background-position: center;
+                transform: scale(1.005);
+            }
+            >* {
+                grid-area: 1 / 1 / 2 / 2;
+                width: 100%;
+                height: 100%;
+                max-height: 100%;
+            }
+       }
+    }
+
+    .testimonial-content {
+        margin-left: 50px;
+        position: relative;
+
+        @include breakpoint (max-xxl) {
+            margin-left: 0;
+        }
+
+        .content {
+            .star {
+                color: $theme-color;
+                margin-bottom: 20px;
+            }
+
+            h3 {
+                font-size: 28px;
+                line-height: 143%;
+                border-bottom: 1px solid rgba(203, 204, 207, 0.24);
+                padding-bottom: 40px;
+                margin-bottom: 30px;
+                font-weight: 500;
+
+                @include breakpoint (max-xxl) {
+                    font-size: 24px;
+                }
+
+                @include breakpoint (max-lg) {
+                    font-size: 20px;
+                }
+
+                @include breakpoint (max-sm) {
+                    font-size: 16px;
+                }
+            }
+
+            .info-item {
+                @include flex;
+                gap: 20px;
+
+                .icon {
+                    width: 56px;
+                    height: 56px;
+                    line-height: 56px;
+                    text-align: center;
+                    border-radius: 100px;
+                    background-color: $theme-color-2;
+                    color: $white;
+                    font-size: 30px;
+                }
+
+                .content {
+                    border-left: 1px solid rgba(203, 204, 207, 0.24);
+                    padding-left: 30px;
+                }
+            }
+        }
+
+        .array-buttons-3 {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            @include flex;
+            gap: 24px;
+
+            @include breakpoint (max-sm) {
+               display: none;
+            }
+
+            .array-prev {
+                width: 48px;
+                height: 48px;
+                line-height: 48px;
+                text-align: center;
+                background-color: $bg-color;
+                color: $header-color;
+                @include transition;
+                z-index: 999;
+                border-radius: 100px;
+                transform: rotate(320deg);
+
+                &:hover {
+                    background-color: $theme-color;
+                    color: $white;
+                }
+            }
+
+            .array-next {
+                width: 48px;
+                height: 48px;
+                line-height: 48px;
+                text-align: center;
+                background-color: $theme-color;
+                color: $white;
+                @include transition;
+                z-index: 999;
+                border-radius: 100px;
+                transform: rotate(320deg);
+                border: 1px solid $theme-color;
+
+                &:hover {
+                    background-color: $bg-color;
+                    color: $header-color;
+                    border: 1px solid $bg-color;
+                }
+            }
+        }
+    }
+}
