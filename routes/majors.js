@@ -33,27 +33,30 @@ router.get('/', (req, res) => {
     // Group majors by category
     const dut = majors.filter(m => m.category === 'dut');
     const bachelor = majors.filter(m => m.category === 'bachelor');
+    const master = majors.filter(m => m.category === 'master');
     const doctorate = majors.filter(m => m.category === 'doctorate');
     
-    res.render('majors/index', { dut, bachelor, doctorate });
+    res.render('majors/index', { dut, bachelor, master, doctorate });
 });
 
-// 2. Specific Category List (e.g., /majors/dut, /majors/bachelor, /majors/doctorate)
+// 2. Specific Category List (e.g., /majors/dut, /majors/bachelor, /majors/master, /majors/doctorate)
 router.get('/:category_or_id', (req, res) => {
     const param = req.params.category_or_id.toLowerCase();
     const majors = getMajors();
     
     // First check if it's a category
-    if (['dut', 'bachelor', 'doctorate'].includes(param)) {
+    if (['dut', 'bachelor', 'master', 'doctorate'].includes(param)) {
         const filteredMajors = majors.filter(m => m.category === param);
         let categoryArabicName = 'أهم التخصصات';
         if (param === 'dut') categoryArabicName = 'التكوين المهني (DUT)';
         else if (param === 'bachelor') categoryArabicName = 'بكالوريوس (Baccalaurios)';
+        else if (param === 'master') categoryArabicName = 'ماجستير (Master)';
         else if (param === 'doctorate') categoryArabicName = 'دكتوراه (Doctorat)';
         
         return res.render('majors/index', { 
             dut: param === 'dut' ? filteredMajors : [],
             bachelor: param === 'bachelor' ? filteredMajors : [],
+            master: param === 'master' ? filteredMajors : [],
             doctorate: param === 'doctorate' ? filteredMajors : [],
             activeTab: param,
             categoryName: categoryArabicName

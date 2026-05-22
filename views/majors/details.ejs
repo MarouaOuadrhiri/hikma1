@@ -51,6 +51,19 @@
                         <p><strong>المدة:</strong> <%= major.duration %></p>
                         <p><strong>لغة التدريس:</strong> <%= major.language %></p>
                         <p><%= major.description %></p>
+                        <% if (major.tuition) { %>
+                            <p><strong>تكلفة الدراسة السنوية:</strong> <%= major.tuition %></p>
+                        <% } %>
+                        <% if (major.requirements && major.requirements.length) { %>
+                            <div class="mt-4">
+                                <h4>متطلبات القبول</h4>
+                                <ul class="news-list" style="flex-wrap: wrap; gap: 8px; padding: 0;">
+                                    <% major.requirements.forEach(requirement => { %>
+                                        <li><i class="fa-solid fa-check"></i> <%= requirement %></li>
+                                    <% }) %>
+                                </ul>
+                            </div>
+                        <% } %>
                         <div class="mt-4">
                             <h4>تفاصيل التخصص</h4>
                             <p><%= major.details %></p>

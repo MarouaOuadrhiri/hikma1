@@ -415,6 +415,24 @@
                                                                 </li>
                                                             </ul>
                                                         </li>
+                                                        <li class="category-item">
+                                                            <a href="/majors" class="category-link">ماجستير (Master) <i class="fa-solid fa-angle-left"></i></a>
+                                                            <ul class="specialty-list-majors">
+                                                                <li class="specialty-title">تخصصات الماجستير:</li>
+                                                                <li>
+                                                                    <a href="/majors/master-business-administration">
+                                                                        <strong>إدارة الأعمال الدولية</strong>
+                                                                        <span>إعداد قادة أعمال قادرين على إدارة المشاريع والمؤسسات عبر الحدود.</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="/majors/master-data-science">
+                                                                        <strong>علوم البيانات وتحليل الأعمال</strong>
+                                                                        <span>تحليل البيانات الضخمة لبناء حلول ذكية لدعم القرارات الإستراتيجية.</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
                                                     </ul>
                                                     <div class="mega-menu-footer">
                                                         <a href="/majors" class="theme-btn">عرض كافة التخصصات</a>
@@ -552,6 +570,11 @@
     overflow: hidden;
 }
 
+/* Prevent nested mega-menu list items from inheriting the global menu li positioning */
+.mega-menu-container li {
+    position: static !important;
+}
+
 /* Country and Category Columns (Right Column) */
 .country-list, .category-list {
     list-style: none !important;
@@ -676,6 +699,13 @@
     overflow-y: auto;
 }
 
+/* Fix university specialty panel positioning by anchoring it to the university column edge */
+.mega-menu-container .specialty-list {
+    width: 456px !important;
+    right: 100% !important;
+    left: auto !important;
+}
+
 /* For Majors menu, the specialty list occupies the rest of the menu (75%) */
 .container-majors .specialty-list-majors {
     right: 25%;
@@ -787,32 +817,8 @@
     display: block;
 }
 
-/* Sibling Hover Hiding:
-   When hovering over the country-list container, hide the default (first-child) university list,
-   unless we are hovering on the first child itself. */
-.country-list:hover .country-item:first-child .university-list {
-    display: none;
-}
-.country-list .country-item:first-child:hover .university-list {
-    display: block;
-}
-
-/* Sibling Hover Hiding for University specialties */
-.university-list:hover .university-item:first-child .specialty-list {
-    display: none;
-}
-.university-list .university-item:first-child:hover .specialty-list {
-    display: block;
-}
-
 /* Category Default Active Tab (Majors) */
 .category-item:first-child .specialty-list-majors {
-    display: block;
-}
-.category-list:hover .category-item:first-child .specialty-list-majors {
-    display: none;
-}
-.category-list .category-item:first-child:hover .specialty-list-majors {
     display: block;
 }
 
@@ -902,5 +908,3 @@
     }
 }
 </style>
-
-
