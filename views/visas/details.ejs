@@ -28,7 +28,7 @@
     <section class="breadcrumb-wrapper fix bg-cover" style="background-image: url('/assets/img/inner-page/breadcrumb.jpg');">
         <div class="container">
             <div class="page-heading">
-                <h1 class="breadcrumb-title"><%= visa.title %></h1>
+                <h1 class="breadcrumb-title"><% if (visa.flag) { %><%= visa.flag %> <% } %><%= visa.title %></h1>
                 <ul class="breadcrumb-list">
                     <li><a href="/">الرئيسية</a></li>
                     <li><i class="fa-solid fa-chevron-right"></i></li>
@@ -63,10 +63,113 @@
                                 <% }) %>
                             </ul>
                         </div>
+
+                        <% if (visa.tuition && visa.tuition.length) { %>
+                        <div class="mt-4">
+                            <h4>رسوم الدراسة حسب التخصص</h4>
+                            <div class="row g-3">
+                                <% visa.tuition.forEach(item => { %>
+                                    <div class="col-md-6 col-12">
+                                        <div style="background:#f9f9f9; border-radius:12px; padding:14px 16px; display:flex; justify-content:space-between; align-items:center;">
+                                            <span style="font-weight:600;"><%= item.label %></span>
+                                            <span style="color:#cc181e; font-weight:600;"><%= item.value %></span>
+                                        </div>
+                                    </div>
+                                <% }) %>
+                            </div>
+                        </div>
+                        <% } %>
+
+                        <% if (visa.livingCost) { %>
+                        <div class="mt-4">
+                            <h4>تكلفة المعيشة</h4>
+                            <div class="row g-3 text-center">
+                                <% if (visa.livingCost.residence) { %>
+                                <div class="col-6 col-md-3">
+                                    <div style="border:1px solid #e7e7e7; border-radius:12px; padding:16px 10px;">
+                                        <i class="fa-solid fa-building" style="color:#cc181e; font-size:20px;"></i>
+                                        <div style="font-size:13px; margin-top:8px;">سكن جامعي</div>
+                                        <div style="font-weight:600; font-size:14px;"><%= visa.livingCost.residence %></div>
+                                    </div>
+                                </div>
+                                <% } %>
+                                <% if (visa.livingCost.apartment) { %>
+                                <div class="col-6 col-md-3">
+                                    <div style="border:1px solid #e7e7e7; border-radius:12px; padding:16px 10px;">
+                                        <i class="fa-solid fa-house" style="color:#cc181e; font-size:20px;"></i>
+                                        <div style="font-size:13px; margin-top:8px;">شقة خاصة</div>
+                                        <div style="font-weight:600; font-size:14px;"><%= visa.livingCost.apartment %></div>
+                                    </div>
+                                </div>
+                                <% } %>
+                                <% if (visa.livingCost.food) { %>
+                                <div class="col-6 col-md-3">
+                                    <div style="border:1px solid #e7e7e7; border-radius:12px; padding:16px 10px;">
+                                        <i class="fa-solid fa-utensils" style="color:#cc181e; font-size:20px;"></i>
+                                        <div style="font-size:13px; margin-top:8px;">التغذية</div>
+                                        <div style="font-weight:600; font-size:14px;"><%= visa.livingCost.food %></div>
+                                    </div>
+                                </div>
+                                <% } %>
+                                <% if (visa.livingCost.transport) { %>
+                                <div class="col-6 col-md-3">
+                                    <div style="border:1px solid #e7e7e7; border-radius:12px; padding:16px 10px;">
+                                        <i class="fa-solid fa-bus" style="color:#cc181e; font-size:20px;"></i>
+                                        <div style="font-size:13px; margin-top:8px;">النقل</div>
+                                        <div style="font-weight:600; font-size:14px;"><%= visa.livingCost.transport %></div>
+                                    </div>
+                                </div>
+                                <% } %>
+                            </div>
+                            <% if (visa.livingCost.total) { %>
+                                <div style="margin-top:14px; background:#fdecec; border-radius:12px; padding:14px 18px; font-weight:700; color:#cc181e; text-align:center;">
+                                    الميزانية الشهرية الإجمالية: <%= visa.livingCost.total %>
+                                </div>
+                            <% } %>
+                        </div>
+                        <% } %>
+
+                        <% if (visa.topUniversities && visa.topUniversities.length) { %>
+                        <div class="mt-4">
+                            <h4>أفضل الجامعات</h4>
+                            <div style="display:flex; flex-wrap:wrap; gap:10px;">
+                                <% visa.topUniversities.forEach(uni => { %>
+                                    <span style="background:#f2f2f2; border-radius:30px; padding:8px 16px; font-size:14px;"><i class="fa-solid fa-graduation-cap" style="color:#cc181e; margin-left:6px;"></i><%= uni %></span>
+                                <% }) %>
+                            </div>
+                        </div>
+                        <% } %>
+
+                        <% if (visa.faq && visa.faq.length) { %>
+                        <div class="mt-4">
+                            <h4>الأسئلة الشائعة</h4>
+                            <div class="accordion" id="visaFaqAccordion">
+                                <% visa.faq.forEach((item, i) => { %>
+                                    <div style="border:1px solid #e7e7e7; border-radius:12px; margin-bottom:10px; overflow:hidden;">
+                                        <button class="btn" data-bs-toggle="collapse" data-bs-target="#faq-<%= visa.id %>-<%= i %>" style="width:100%; text-align:right; padding:14px 18px; font-weight:600; background:#fafafa; border:none;">
+                                            <%= item.q %>
+                                        </button>
+                                        <div id="faq-<%= visa.id %>-<%= i %>" class="collapse" data-bs-parent="#visaFaqAccordion">
+                                            <div style="padding:14px 18px; color:#555;"><%= item.a %></div>
+                                        </div>
+                                    </div>
+                                <% }) %>
+                            </div>
+                        </div>
+                        <% } %>
                     </div>
                 </div>
                 <div class="col-lg-4 col-12">
                     <div class="news-sideber-box text-right p-4" style="border: 1px solid #e7e7e7; border-radius: 18px;">
+                        <h4>وجهات أخرى</h4>
+                        <ul style="padding: 0; list-style: none;">
+                            <% if (typeof allVisas !== 'undefined') { %>
+                                <% allVisas.filter(v => v.id !== visa.id).forEach(v => { %>
+                                    <li style="margin-bottom:10px;"><a href="/visas/<%= v.id %>"><% if (v.flag) { %><%= v.flag %> <% } %><%= v.title %></a></li>
+                                <% }) %>
+                            <% } %>
+                        </ul>
+                        <hr>
                         <h4>تنقل سريع</h4>
                         <ul style="padding: 0; list-style: none;">
                             <li><a href="/services">خدماتنا</a></li>

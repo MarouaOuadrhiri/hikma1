@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
         return res.status(404).render('404');
     }
 
-    res.render('visas/details', { visa });
+    res.render('visas/details', { visa, allVisas: visas });
 });
 
 module.exports = router;

@@ -40,13 +40,30 @@
 
     <section class="news-standard-section section-padding fix" dir="rtl">
         <div class="container">
+            <div class="text-center mb-5">
+                <span class="sub-title" style="color:#cc181e; font-weight:600; letter-spacing:1px;">وجهات الدراسة</span>
+                <h2 style="margin-top:8px;">اختر وجهتك الدراسية</h2>
+                <p style="max-width:640px; margin:10px auto 0;">تعرف على شروط الفيزا، تكاليف الدراسة والمعيشة، وأفضل الجامعات في كل وجهة قبل اتخاذ قرارك.</p>
+            </div>
             <div class="row g-4">
                 <% visas.forEach(visa => { %>
                     <div class="col-lg-4 col-md-6 col-12">
-                        <div class="news-standard-post" style="border: 1px solid #e7e7e7; border-radius: 18px; overflow: hidden;">
+                        <div class="news-standard-post visa-card" style="border: 1px solid #e7e7e7; border-radius: 18px; overflow: hidden; height:100%; transition: transform .25s ease, box-shadow .25s ease;">
+                            <div class="news-thumb" style="position:relative; overflow:hidden;">
+                                <img src="<%= visa.image %>" alt="<%= visa.title %>" style="width:100%; height:200px; object-fit:cover; display:block;">
+                                <% if (visa.flag) { %>
+                                    <span style="position:absolute; top:14px; right:14px; background:#fff; border-radius:50%; width:44px; height:44px; display:flex; align-items:center; justify-content:center; font-size:22px; box-shadow:0 4px 10px rgba(0,0,0,.15);"><%= visa.flag %></span>
+                                <% } %>
+                            </div>
                             <div class="news-content p-4 text-right">
-                                <h3><a href="/visas/<%= visa.id %>"><%= visa.title %></a></h3>
+                                <h3 style="font-size:20px;"><a href="/visas/<%= visa.id %>"><%= visa.title %></a></h3>
                                 <p><%= visa.summary %></p>
+                                <% if (visa.livingCost && visa.livingCost.total) { %>
+                                    <div style="display:flex; align-items:center; gap:8px; margin-bottom:14px; color:#555; font-size:14px;">
+                                        <i class="fa-solid fa-wallet" style="color:#cc181e;"></i>
+                                        <span>ميزانية شهرية: <%= visa.livingCost.total %></span>
+                                    </div>
+                                <% } %>
                                 <a href="/visas/<%= visa.id %>" class="theme-btn">عرض التفاصيل</a>
                             </div>
                         </div>
